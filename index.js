@@ -46,7 +46,7 @@ app.post('/auth', function (req, res) {
           // エラーメッセージを設定
           req.flash('errorHost', localizeData[language].E0017)
           // ログイン処理呼び出す
-          res.redirect('/login');
+          res.redirect('/loginPage');
           res.end();
         }
       }
