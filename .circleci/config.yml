@@ -1,0 +1,33 @@
+version: 2.1
+orbs:
+  node: circleci/node@1.1
+jobs:
+  build-and-deploy:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - run: npm install
+            - run:
+                name: Installing deployment dependencies
+                command: |
+                  sudo apt-get -y -qq update
+                  sudo apt-get install python-pip python-dev build-essential
+                  sudo pip install pyrsistent==0.16.1
+                  sudo pip install --upgrade setuptools
+                  sudo pip install awsebcli==3.19.4 --upgrade
+            - run:
+                name: Deploying
+                command: eb deploy Testdb-env
+
+workflows:
+  build-and-deploy:
+    jobs:
+      - build-and-deploy:
+          context: aws
+          filters:
+            branches:
+              only:
+                - main
