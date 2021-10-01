@@ -1,8 +1,8 @@
 branch-defaults:
   main:
-    environment: Hellonode-env-1
+    environment: Testdb-env
 global:
-  application_name: hello-node
+  application_name: test-db
   default_platform: Node.js 14 running on 64bit Amazon Linux 2/5.4.5
   default_region: ap-northeast-1
   sc: git
