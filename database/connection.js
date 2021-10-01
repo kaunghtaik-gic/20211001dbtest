@@ -3,8 +3,8 @@ const {Client} = require('pg');
 require('dotenv').config();
   const client = new Client({ 
     user: 'kh',
-    host: 'postgres-free.cmzy7tos3igh.ap-northeast-1.rds.amazonaws.com',
-    database: 'dbname',
+    host: 'aayy70i9w3o612.cmzy7tos3igh.ap-northeast-1.rds.amazonaws.com',
+    database: 'ebdb',
     password: 'kaunghtaik',
     port: '5432'
   });
