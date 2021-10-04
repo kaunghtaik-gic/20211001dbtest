@@ -5,8 +5,7 @@ require('dotenv').config();
     user: 'kh',
     host: 'aayy70i9w3o612.cmzy7tos3igh.ap-northeast-1.rds.amazonaws.com',
     database: 'ebdb',
-    password: 'kaunghtaik',
-    port: '5432'
+    password: 'kaunghtaik'
   });
 
   // const client = new Client({ 
