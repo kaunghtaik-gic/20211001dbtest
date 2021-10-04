@@ -5,7 +5,8 @@ require('dotenv').config();
     user: 'kh',
     host: 'aayy70i9w3o612.cmzy7tos3igh.ap-northeast-1.rds.amazonaws.com',
     database: 'ebdb',
-    password: 'kaunghtaik'
+    password: 'kaunghtaik',
+    port: '5432'
   });
 
   // const client = new Client({ 
@@ -27,7 +28,7 @@ require('dotenv').config();
 
 client.connect(function(error){
     if(!!error){
-        console.log(error);
+        console.log("connection Error Help!>>>>>>"+error);
     }else{
         console.log('Postgres Connected!');
     }
