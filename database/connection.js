@@ -29,7 +29,7 @@ require('dotenv').config();
 client.connect(function(error){
     if(!!error){
         console.log("connection Error Help!>>>>>>"+error);
-        console.log("connection Error Help!>>>>>>"+error.stack);
+        console.log("connection Error Stack>>>>>>"+error.stack);
     }else{
         console.log('Postgres Connected!');
     }
