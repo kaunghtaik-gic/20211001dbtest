@@ -21,7 +21,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/loginPage', function (req, res) {
-  res.render("login");
+  res.render("login", {errormsg: ""});
   res.end();
 });
 
@@ -44,9 +44,7 @@ app.post('/auth', function (req, res) {
           res.end();
         } else {
           // エラーメッセージを設定
-          req.flash('errorHost', localizeData[language].E0017)
-          // ログイン処理呼び出す
-          res.redirect('/loginPage');
+          res.render("login", {errormsg: "ユーザーIDとパスワードが間違っています。"});
           res.end();
         }
       }

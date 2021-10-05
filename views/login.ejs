@@ -23,6 +23,10 @@ body {
 #login .container #login-row #login-column #login-box #login-form #register-link {
   margin-top: -85px;
 }
+.center {
+  text-align: center;
+  color: rgb(141, 8, 8);
+}
 </style>
 </head>
 <body>
@@ -31,6 +35,11 @@ body {
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
+                    <h4 class="center">
+                        <% if (errormsg) { %>
+                            <%- errormsg %>
+                        <% } %> 
+                    </h4>
                     <div id="login-box" class="col-md-12">
                         <form id="login-form" class="form" action="auth" method="post">
                             <h3 class="text-center text-info">Login</h3>
